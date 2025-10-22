@@ -1,6 +1,7 @@
 const overlay = document.getElementById('overlay');
 const card = document.querySelector('.profile-card');
 const music = document.getElementById('bg-music');
+const volumeSlider = document.getElementById('volume');
 music.volume = 0.3;
 
 document.addEventListener('click', () => {
@@ -8,3 +9,7 @@ document.addEventListener('click', () => {
     card.classList.add('visible');    
     music.play();                   
 }, { once: true });
+
+volumeSlider.addEventListener('input', (e) => {
+    music.volume = e.target.value;
+});
