@@ -1,0 +1,118 @@
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ABE2, #5563DE);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  transition: opacity 1s ease, backdrop-filter 1.2s ease;
+  z-index: 2;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  backdrop-filter: blur(0);
+  pointer-events: none;
+}
+
+.enter-text {
+  color: white;
+  font-size: 2em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255,255,255,0.4);
+  animation: fade 2s infinite alternate;
+}
+
+
+@keyframes fade {
+  from { opacity: 0.5; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.05); }
+}
+
+
+.profile-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+  z-index: 1;
+}
+
+.profile-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 320px;
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+ 
+        .profile-card img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+        }
+
+        .profile-card h2 {
+            margin: 10px 0 5px;
+            font-size: 1.6em;
+            font-weight: 600;
+        }
+
+        .profile-card p {
+            font-size: 0.95em;
+            color: rgba(255, 255, 255, 0.85);
+            margin: 6px 0;
+        }
+
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
